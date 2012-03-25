@@ -1,36 +1,16 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>News Pics</title>
+    <link rel="stylesheet" href="style.css" />
+    {%  block css %}{% endblock %}
+    <title>{% block title %}<a href=""></a>{% endblock %}</title>
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="header">
-            <nav>
-                <ul>
-                    <li>Home</li>
-                </ul>
-            </nav>
-        </div>
-
-        <div id="content">
-            <ul>
-                <li><a href="">Story 1</a></li>
-                <li><a href="">Story 2</a></li>
-                <li><a href="">Story 3</a></li>
-                <li><a href="">Story 4</a></li>
-                <li><a href="">Story 5</a></li>
-                <li><a href="">Story 6</a></li>
-                <li><a href="">Story 7</a></li>
-                <li><a href="">Story 8</a></li>
-                <li><a href="">Story 9</a></li>
-                <li><a href="">Story 10</a></li>
-            </ul>
-        </div>
-
-        <div id="footer">Made By SansSJSstudioS</div> 
-    </div>
+    <div id="container">
+    {% block header %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+</div>
 </body>
-
 </html>
