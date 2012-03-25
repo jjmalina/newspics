@@ -13,7 +13,7 @@ def tumblr_tag_querystring(query):
     """
     query = normalize_query(query)
     endpoint = 'http://api.tumblr.com/v2/'
-    api_call = 'tagged?tag=%s&api_key%s' % (query, tumblr_key)
+    api_call = 'tagged?tag=%s&api_key=%s' % (query, tumblr_key)
     return endpoint + api_call
 
 
@@ -23,7 +23,7 @@ def tumblr_tag_request(tag_query):
     """
     querystring = tumblr_tag_querystring(tag_query)
     response = requests.get(querystring)
-    if response.status == 200:
+    if response.status_code == 200:
         return json.loads(response.text)
     else:
         return None
@@ -38,6 +38,9 @@ def get_topic_image(tumblr_data):
         if post['type'] == 'photo':
             photo_post = post
             break
-    post_photo = photo_post['photos'][0]
-    return post_photo['alt_sizes'][1]
+    if not photo_post:
+        return None
+    else:
+        post_photo = photo_post['photos'][0]
+        return post_photo['alt_sizes'][1]
 
