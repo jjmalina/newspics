@@ -210,3 +210,7 @@ TEST_RUNNER = 'djcelery.contrib.test_runner.CeleryTestSuiteRunner'
 # Tumblr Key
 TUMBLR_KEY = 'M9nlUBlbLJNviSlqQG9Ml3qbAEHiF3XckKUEPJoDMIuX1wwYB4'
 
+try:
+    from local_settings import *
+except ImportError:
+    pass 
