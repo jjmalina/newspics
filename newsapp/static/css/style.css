@@ -1,0 +1,21 @@
+.wrapper {
+	width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#article-list li {
+	float: left;
+	margin: 20px;
+}
+
+.article-image-container {
+	float: left;
+	width: 100%;
+}
+
+article {
+	margin-bottom: 30px;
+	width: 100%;
+	float: left;
+}
