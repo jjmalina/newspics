@@ -1,6 +1,7 @@
 import requests
 import settings
 from django.utils import simplejson as json
+from operator import itemgetter
 
 from articlefeed.utils import normalize_query
 
@@ -34,7 +35,19 @@ def get_topic_image(tumblr_data):
     Returns the most recent image and it's size from the tumblr response
     """
     photo_post = None
-    for post in tumblr_data['response']:
+    sort = False
+    sorted_posts = []
+    posts = tumblr_data['response']
+    try:
+        sorted_posts = sorted(posts, key=itemgetter('note_count'))
+        sort = True
+    except KeyError:
+        pass
+
+    if sort:
+        posts = reversed(sorted_posts)  
+        
+    for post in posts:
         if post['type'] == 'photo':
             photo_post = post
             break
