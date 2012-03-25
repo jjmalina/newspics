@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
     {%  block css %}{% endblock %}
 </head>
 
@@ -13,19 +14,18 @@
         </header> 
     {% endblock %}
     {% block content %}
-        <ul class="articleList">
+        <ul id="article-list">
             {% for article in articles %}
                 <li>
                     <article>
                         <h3> {{ article.title }}</h3>
-                        <ul>
+                        <div class="article-image-container">
                             {% for topic in article.topics.all %}
-                            <li>
+                            <div class="article-image">
                                 <img src="{{ topic.image.image_url }}" height="{{ topic.image.image_height }}" width="{{ topic.image.image_width }}" />
-                            </li>
+                            </div>
                             {% endfor %}
-                        </ul>
-
+                        </div>
                     </article>
                 </li>
             {% endfor %}   
@@ -35,5 +35,8 @@
         <h6> &copy; SansSJStudioS</h6>
     {% endblock %}
 </div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
 </body>
 </html>
