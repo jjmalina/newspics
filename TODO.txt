@@ -13,7 +13,5 @@ How the app works:
 
 
 test each API to see what data we get and model the API call process
-set up django and a github repository
-model our database
 set up django and celery to run the API call process periodically
 design an attractive front end to show all of our stuff.

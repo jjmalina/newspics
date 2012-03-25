@@ -173,14 +173,14 @@ CELERY_RESULT_BACKEND = 'database'
 
 # We can use django instead of rabbitmq
 if (False):
-    BROKER_BACKEND = "djkombu.transport.DatabaseTransport"
+    BROKER_BACKEND = "djcelery.transport.DatabaseTransport"
     # Database information is pulled from Django
 else:
     BROKER_HOST = "localhost"
     BROKER_PORT = 5672
-    BROKER_USER = "tester"
-    BROKER_PASSWORD = "tester"
-    BROKER_VHOST = "test_vhost"
+    BROKER_USER = "hazel"
+    BROKER_PASSWORD = "threarah"
+    BROKER_VHOST = "muckrack"
     
 # If this is set, periodic tasks are automatically pulled from tasks.py
 # and stored in the database.  I don't know why it allows admins to delete them, though
