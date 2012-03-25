@@ -58,9 +58,13 @@ article h3{
 	font-size: 1.5em;
 }
 
+article h4 { 
+	max-width: 500px;
+}
+
 article a {
 	
-	font-size: 1em;
+	font-size: 12px;
 
 }
 
@@ -71,7 +75,7 @@ article a {
 a:link{
     text-decoration: none;
     color: #E46C0A;
-    border-bottom: 1px solid #E46C0A;;
+    border-bottom: 1px solid #E46C0A;
 }
 a:visited{
     text-decoration: none;
