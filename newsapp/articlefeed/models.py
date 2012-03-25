@@ -1,4 +1,5 @@
 from django.db import models
+import jsonfield
 
 
 class Image(models.Model):
@@ -21,8 +22,9 @@ class Article(models.Model):
         help_text='The full, canonical, non-shortened URL for the article.'
     )
     title = models.CharField(max_length=255, blank=True, null=True)
+    publisher = models.CharField(max_length=40, blank=True, null=True)
     author_name = models.CharField(
-        max_length=255,
+        max_length=80,
         blank=True,
         null=True,
         help_text="Author name as given by an external API."
@@ -35,6 +37,8 @@ class Article(models.Model):
     pub_date = models.DateTimeField()
     date_downloaded = models.DateTimeField(auto_now_add=True)
     images = models.ManyToManyField(Image, through='Topic', related_name='articles')
+    parsely_topics = jsonfield.JSONField(blank=True,null=True)
+    has_topics_and_image = models.BooleanField(default=False)
 
 
 class Topic(models.Model):

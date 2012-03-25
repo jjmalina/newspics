@@ -15,3 +15,27 @@ How the app works:
 test each API to see what data we get and model the API call process
 set up django and celery to run the API call process periodically
 design an attractive front end to show all of our stuff.
+
+
+parsely publishers
+
+usnews
+bloomberg
+gawker
+venturebeat
+betabeat
+dailycaller
+salon
+
+
+periodically scrape muck rack and store trending topics
+for each trending topic, make a request to parsely to get articles for that topic
+	for each article, see if the URL is in our database, if it isn't create a new article
+		for each topic in the article, get an image from tumblr and save it
+		once this is complete, mark the article as ready to go
+store the articles in our database
+then for each article's topic, make API calls to tumblr
+
+have one task get articles and save them with their topics
+the other task queries db for articles that don't have images, then for each topic finds images
+need to designate article and topic as ready
