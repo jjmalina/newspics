@@ -205,3 +205,8 @@ if (TEST):
 # This will make all Celery tasks execute immediately when we are testing
 # http://celeryproject.org/docs/django-celery/cookbook/unit-testing.html
 TEST_RUNNER = 'djcelery.contrib.test_runner.CeleryTestSuiteRunner'
+
+#
+# Tumblr Key
+TUMBLR_KEY = 'M9nlUBlbLJNviSlqQG9Ml3qbAEHiF3XckKUEPJoDMIuX1wwYB4'
+
