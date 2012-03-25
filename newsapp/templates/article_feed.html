@@ -11,7 +11,9 @@
         <div class="article-image-container">
             {% for topic in article.topics.all %}
             <div class="article-image">
-                <img src="{{ topic.image.image_url }}" height="" width="350" alt="{{ topic.name }}" />
+                <a href="{{ topic.image.image_url }}">
+                    <img src="{{ topic.image.image_url }}" height="" width="350" alt="{{ topic.name }}" />
+                </a>
             </div>
             {% endfor %}
         </div>

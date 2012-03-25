@@ -8,4 +8,9 @@ $(function () {
 			}
 		});
 	});
+
+	$(".article-image a").live('click', function () {
+		$.fancybox({ 'href': $(this).attr('href') });
+		return false;
+	});
 });
