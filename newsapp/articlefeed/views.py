@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from articlefeed.models import Article, Topic, Image
 
 def index(request):
-	return render(request, 'baseTest.html', {})
+	articles = Article.objects.batch_select('topics','images').order_by('-pub_date')[:4]
+	return render(request, 'base.html', {'articles': articles})

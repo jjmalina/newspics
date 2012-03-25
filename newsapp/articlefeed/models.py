@@ -1,8 +1,10 @@
 from django.db import models
+from batch_select.models import BatchManager
 import jsonfield
 
 
 class Image(models.Model):
+    objects = BatchManager()
     image_url = models.URLField(
         verify_exists=False,
         max_length=255,
@@ -15,6 +17,7 @@ class Image(models.Model):
 
 
 class Article(models.Model):
+    objects = BatchManager()
     url = models.URLField(
         verify_exists=False,
         max_length=255,
@@ -42,6 +45,7 @@ class Article(models.Model):
 
 
 class Topic(models.Model):
+    objects = BatchManager()
     name = models.CharField(max_length=40, blank=True, null=True)
     article = models.ForeignKey(Article, null=True, related_name='topics')
     image = models.ForeignKey(Image, null=True, related_name='topics')

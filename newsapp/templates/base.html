@@ -7,7 +7,6 @@
 
 <body>
 <div class="wrapper">
-    <a href="baseTest.html">Base Test</a>
     {% block header %}
         <header class="page-header">
             <h1>The Tumblr Times</h1>
@@ -15,12 +14,18 @@
     {% endblock %}
     {% block content %}
         <ul class="articleList">
-            {% for articles in article_list %}
+            {% for article in articles %}
                 <li>
                     <article>
-                        <h3> {{ articles.title }}</h3>
-                        <!-- NEED TO SEE HOW ID IS LOADED SO loadImages.JS WILL WORK -->
-                        <section class="masonryImage_hide" onclick="loadImages.js" id=""{{ articles.title }}>{{articles.images}}</section>
+                        <h3> {{ article.title }}</h3>
+                        <ul>
+                            {% for topic in article.topics.all %}
+                            <li>
+                                <img src="{{ topic.image.image_url }}" height="{{ topic.image.image_height }}" width="{{ topic.image.image_width }}" />
+                            </li>
+                            {% endfor %}
+                        </ul>
+
                     </article>
                 </li>
             {% endfor %}   

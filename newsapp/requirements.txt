@@ -14,3 +14,4 @@ supervisor==3.0a12
 lxml==2.3
 pyquery==1.1.1
 django-jsonfield==0.7.1
+django-batch-select==0.2.3
