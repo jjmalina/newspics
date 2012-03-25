@@ -6,11 +6,12 @@
 {% for article in articles %}
 <li>
     <article>
-        <h3> {{ article.title }}</h3><br /> <h4><a target="_ "href="{{ article.url }}">{{ article.url }}</a></h4>
+        <h3> <a target="_blank" href="{{ article.url }}">{{ article.title }}</a></h3>
+        <p><strong>Topics:</strong>{% for topic in article.topics.all %} <span class="label label-info">{{ topic.name }}</span>{% endfor %}</p>
         <div class="article-image-container">
             {% for topic in article.topics.all %}
             <div class="article-image">
-                <img src="{{ topic.image.image_url }}" height="{{ topic.image.image_height }}" width="{{ topic.image.image_width }}" alt="{{ topic.name }}" />
+                <img src="{{ topic.image.image_url }}" height="" width="350" alt="{{ topic.name }}" />
             </div>
             {% endfor %}
         </div>

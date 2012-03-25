@@ -4,7 +4,7 @@ $(function () {
 		$(this).isotope({
 			itemSelector: '.article-image',
 			masonry: {
-				columnWidth: 1120
+				columnWidth: 350
 			}
 		});
 	});
