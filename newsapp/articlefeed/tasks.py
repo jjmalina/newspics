@@ -46,7 +46,7 @@ def download_article_topics(article, topics):
                 saved_topic.save()
 
 
-@periodic_task(run_every=crontab())
+@periodic_task(run_every=crontab(minute="*/15"))
 def download_new_articles():
     trending_topics = muckrack_trending_topics()
     logger.info("Retrieved trending topics from Muck Rack " + repr(trending_topics))
