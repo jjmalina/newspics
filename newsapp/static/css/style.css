@@ -1,7 +1,12 @@
 .wrapper {
-	width: 1170px;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#article-list {
+	display: block;
+	float: left;
 }
 
 #article-list li {
@@ -9,13 +14,16 @@
 	margin: 20px;
 }
 
+article {
+	margin-bottom: 30px;
+	float: left;
+}
+
 .article-image-container {
 	float: left;
 	width: 100%;
 }
 
-article {
-	margin-bottom: 30px;
-	width: 100%;
-	float: left;
+.article-image {
+	margin: 12px;
 }

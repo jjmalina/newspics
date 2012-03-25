@@ -112,6 +112,11 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.request',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -139,6 +144,7 @@ INSTALLED_APPS = (
     'south',
     'djsupervisor',
     'djcelery',
+    'endless_pagination',
     'articlefeed',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
