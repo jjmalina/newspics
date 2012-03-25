@@ -1,0 +1,19 @@
+TODO
+
+NY Times
+Parse.ly
+Tumblr
+	- api key M9nlUBlbLJNviSlqQG9Ml3qbAEHiF3XckKUEPJoDMIuX1wwYB4
+
+How the app works:
+1. Get the newest/most popular articles from NYT and their headline and content
+2. Take the NYT article content and pass it to parsely so we can get all the topic info
+3. With our list of topics, query tumblr to get images for those topics
+4. Once we have all of our data, store it in the database so we can display it on the front end
+
+
+test each API to see what data we get and model the API call process
+set up django and a github repository
+model our database
+set up django and celery to run the API call process periodically
+design an attractive front end to show all of our stuff.

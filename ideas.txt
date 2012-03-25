@@ -1,0 +1,14 @@
+____________
+/\/\/\/\/\/\
+
+IDEAS
+
+/\/\/\/\/\/\
+------------
+
+Something to do with elections and journalism?
+	- Parse.ly http://hack.parsely.com/testparse
+	- NYtimes http://developer.nytimes.com/docs
+
+Food hack of some kinds
+http://ordr.in/developers
