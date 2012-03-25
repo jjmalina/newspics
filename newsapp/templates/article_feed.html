@@ -1,0 +1,22 @@
+{% load endless %}
+
+{% lazy_paginate 10 articles %}
+<ul id="article-list">
+
+{% for article in articles %}
+<li>
+    <article>
+        <h3> {{ article.title }}</h3><br /> <h4><a target="_ "href="{{ article.url }}">{{ article.url }}</a></h4>
+        <div class="article-image-container">
+            {% for topic in article.topics.all %}
+            <div class="article-image">
+                <img src="{{ topic.image.image_url }}" height="{{ topic.image.image_height }}" width="{{ topic.image.image_width }}" alt="{{ topic.name }}" />
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+</li>
+{% endfor %}
+
+</ul>
+{% show_more "View more articles" %}

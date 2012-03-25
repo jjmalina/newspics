@@ -3,10 +3,9 @@ $(function () {
 	$image_containers.imagesLoaded(function () {
 		$(this).isotope({
 			itemSelector: '.article-image',
-			cellsByRow: {
-    			columnWidth: 1170,
-    			rowHeight: 200
-  			}
+			masonry: {
+				columnWidth: 1120
+			}
 		});
 	});
 });

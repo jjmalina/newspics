@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 @task
 def download_trending_topic_articles(trending_topic):
-    articles = retrieve_parsely_articles(trending_topic, 10)
+    articles = retrieve_parsely_articles(trending_topic, 50)
     for article in articles:
         saved_article, sampled_topics = save_article(article)
         if sampled_topics:

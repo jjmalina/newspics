@@ -15,26 +15,16 @@
         </header> 
     {% endblock %}
     {% block content %}
-        <ul id="article-list">
-            {% for article in articles %}
-                <li>
-                    <article>
-                        <h3> {{ article.title }}</h3> <br /> <h4><a target="_ "href="{{ article.url }}">{{ article.url }}</a></h4>
-                        <div class="article-image-container">
-                            {% for topic in article.topics.all %}
-                            <div class="article-image">
-                                <img src="{{ topic.image.image_url }}" height="{{ topic.image.image_height }}" width="{{ topic.image.image_width }}" />
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </article>
-                </li>
-            {% endfor %}   
-        </ul>
+            {% include 'article_feed.html' %} 
     {% endblock %}
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/app.js"></script>
+<script src="{{ STATIC_URL }}endless_pagination/js/endless.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}endless_pagination/js/endless_on_scroll.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var endless_on_scroll_margin = 20;
+</script>
 </body>
 </html>
