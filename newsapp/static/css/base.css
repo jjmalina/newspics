@@ -1,0 +1,62 @@
+
+body{
+	background-color: #395875;
+
+}
+
+#wrapper {
+	width: 90%;
+    background-color: #395875;
+    text-align: left;  
+    margin: 0 auto;
+    padding: 0
+}
+
+header h1 {
+	font-family: 'News Cycle', sans-serif;
+	text-align: center;
+	font-size: 3em;
+}
+
+.articleList {
+	list-style-type: none;
+}
+
+article{
+	width: 800px;
+	padding: 0px 30px 0px 30px;
+}
+
+article h3{
+	color: #719744;
+	font-size: 2em;
+	padding: 0px 0px 10px 0px;
+}
+
+
+
+
+/*Masonry CSS*/
+
+.masonryImages_hide {
+	display: none;
+}
+
+.masonryImages_show{
+	display: block;
+}
+
+section div{
+	-moz-column-count: 7;
+	-moz-column-gap: 10px;
+	-webkit-column-count: 7;
+	-webkit-column-gap: 10px;
+	column-count: 7;
+	column-gap: 10px;
+	width: 800px;
+}
+
+div img{
+display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+margin-bottom: 20px;
+width: 100%; }
