@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" />
     {%  block css %}{% endblock %}
-    <title>{% block title %}<a href=""></a>{% endblock %}</title>
 </head>
 
 <body>
-    <div id="container">
-    {% block header %}{% endblock %}
-    {% block content %}{% endblock %}
-    {% block footer %}{% endblock %}
+    <div class="container">
+    {% block header %}
+        <header class="page-header">
+            <h1>The Tumblr Times</h1>
+        </header> 
+    {% endblock %}
+    {% block content %}
+        <ul class="articleList">
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+            <li><article>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</article></li>
+        </ul>
+    {% endblock %}
+    {% block footer %}
+        <h6> &copy; SansSJStudioS</h6>
+    {% endblock %}
 </div>
 </body>
 </html>
